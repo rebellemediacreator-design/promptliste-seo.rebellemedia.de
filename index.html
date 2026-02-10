@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChatGPT-Prompt-Liste – SEO mit Haltung | 🖤 RE:BELLE™ Media</title>
+  <meta name="description" content="Hero-Intro + 10 SEO-Prompts + Outro. 12 Seiten. Klarheit, Struktur, Rankings – ohne Agentur-Abhängigkeit. 🖤 RE:BELLE™ Media" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Google Fonts: Allura (Initial), Montserrat (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg0:#07070a;
+      --bg1:#0c0d12;
+      --ink:#f5f6fb;
+      --muted:rgba(245,246,251,.72);
+      --line:rgba(245,246,251,.14);
+      --card:rgba(12,13,18,.66);
+      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --radius: 22px;
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 900px at 30% 10%, rgba(255,255,255,.08), transparent 60%),
+                  linear-gradient(180deg, var(--bg0), var(--bg1));
+      color:var(--ink);
+      overflow-x:hidden;
+    }
+
+    main{
+      scroll-snap-type: y mandatory;
+      height:100vh;
+      overflow-y:auto;
+      overscroll-behavior: contain;
+      scroll-behavior:smooth;
+    }
+    section.page{
+      min-height:100vh;
+      scroll-snap-align: start;
+      display:flex;
+      align-items:center;
+      padding: 64px 16px;
+      position:relative;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+
+    .bg{
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .bg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(7,7,10,.92) 0%, rgba(7,7,10,.62) 45%, rgba(7,7,10,.92) 100%),
+        linear-gradient(180deg, rgba(7,7,10,.55) 0%, rgba(7,7,10,.82) 100%);
+    }
+
+    .wrap{
+      width:100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom: 8px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .brand .kicker{
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:.78rem;
+      color: var(--muted);
+    }
+    .brand h1{
+      margin:0;
+      font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+      font-weight:750;
+      line-height:1.10;
+    }
+    .brand p{
+      margin:0;
+      color: var(--muted);
+      max-width: 70ch;
+      line-height:1.55;
+      font-size: 1rem;
+    }
+
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .metaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:12px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      font-size:.86rem;
+      color: var(--muted);
+      user-select:none;
+    }
+    .pill strong{color:var(--ink); font-weight:800}
+
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    button.navbtn{
+      appearance:none;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 10px 12px;
+      font-weight:700;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    button.navbtn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.22); }
+    button.navbtn:active{ transform: translateY(0); }
+
+    .prompt{
+      margin:0;
+      line-height:1.55;
+      font-size: clamp(1.02rem, 1.7vw, 1.25rem);
+      color: rgba(245,246,251,.92);
+    }
+    .prompt .initial{
+      font-family: "Allura", cursive;
+      font-size: 3.2rem;
+      line-height: .9;
+      margin-right: .35rem;
+      display:inline-block;
+      transform: translateY(.4rem);
+      color: rgba(245,246,251,.96);
+      text-shadow: 0 10px 35px rgba(0,0,0,.55);
+    }
+
+    .heroTitle{
+      margin:0;
+      font-size: clamp(1.55rem, 3.3vw, 2.75rem);
+      font-weight:850;
+      line-height:1.05;
+      letter-spacing: .01em;
+    }
+    .heroSub{
+      margin:10px 0 0;
+      color: rgba(245,246,251,.86);
+      font-size: clamp(1.02rem, 1.8vw, 1.18rem);
+      line-height:1.6;
+      max-width: 68ch;
+    }
+    .tagline{
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: .98rem;
+      line-height:1.55;
+    }
+
+    .hint{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height:1.5;
+    }
+
+    .figure{
+      margin:0;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: rgba(255,255,255,.03);
+    }
+    .figure img{
+      width:100%;
+      height: 260px;
+      object-fit: cover;
+      display:block;
+      filter: contrast(1.03) saturate(1.05);
+    }
+    .cap{
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: .86rem;
+      border-top:1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.18);
+    }
+
+    .linksRow{
+      margin-top: 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      color: rgba(245,246,251,.90);
+      font-size: .98rem;
+    }
+    .linksRow a{
+      color: rgba(245,246,251,.92);
+      text-decoration:none;
+      border-bottom: 1px solid rgba(245,246,251,.26);
+    }
+    .linksRow a:hover{ border-bottom-color: rgba(245,246,251,.60); }
+
+    @media (min-width: 900px){
+      section.page{ padding: 72px 24px; }
+      .wrap{ grid-template-columns: 1.05fr .95fr; gap: 18px; }
+      .card{ padding: 20px 18px; }
+      .figure img{ height: 380px; }
+      .topbar{ grid-column: 1 / -1; }
+    }
+
+    /* Dots navigation */
+    .dots{
+      position: fixed;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index: 50;
+      padding: 10px 8px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(10px);
+    }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border:1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.10);
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .dot[aria-current="true"]{
+      background: rgba(245,246,251,.92);
+      border-color: rgba(245,246,251,.92);
+      transform: scale(1.15);
+    }
+
+    footer{
+      padding: 26px 16px 40px;
+      border-top:1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      max-width: var(--max);
+      margin: 0 auto;
+      line-height:1.55;
+    }
+    footer .sig{
+      font-family:"Allura", cursive;
+      font-size: 2rem;
+      color: rgba(245,246,251,.95);
+      margin: 6px 0 2px;
+    }
+    footer a{
+      color: rgba(245,246,251,.92);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245,246,251,.22);
+    }
+    footer a:hover{ border-bottom-color: rgba(245,246,251,.55); }
+
+    @media (prefers-reduced-motion: reduce){
+      main{ scroll-behavior:auto !important; }
+      .dot, button.navbtn{ transition:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="dots" aria-label="Seitennavigation">
+    <button class="dot" data-goto="hero" aria-label="Zu Intro"></button>
+    <button class="dot" data-goto="p1" aria-label="Zu Prompt 1"></button>
+    <button class="dot" data-goto="p2" aria-label="Zu Prompt 2"></button>
+    <button class="dot" data-goto="p3" aria-label="Zu Prompt 3"></button>
+    <button class="dot" data-goto="p4" aria-label="Zu Prompt 4"></button>
+    <button class="dot" data-goto="p5" aria-label="Zu Prompt 5"></button>
+    <button class="dot" data-goto="p6" aria-label="Zu Prompt 6"></button>
+    <button class="dot" data-goto="p7" aria-label="Zu Prompt 7"></button>
+    <button class="dot" data-goto="p8" aria-label="Zu Prompt 8"></button>
+    <button class="dot" data-goto="p9" aria-label="Zu Prompt 9"></button>
+    <button class="dot" data-goto="p10" aria-label="Zu Prompt 10"></button>
+    <button class="dot" data-goto="outro" aria-label="Zu Outro"></button>
+  </nav>
+
+  <main id="scroller" aria-label="Landingpage: SEO Prompt Liste">
+
+    <!-- HERO INTRO (PAGE 0) -->
+    <section class="page" id="hero" data-index="0">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_3_3817995591939702684.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">🖤 RE:BELLE™ Media · Prompt Landingpage</div>
+            <h1 class="heroTitle">SEO noch selbst machen? Warum.</h1>
+            <p class="heroSub">
+              10 Prompts. 10 Seiten. 1 System.<br>
+              Rankings, Klarheit und Content mit Haltung – ohne Agentur-Abhängigkeit, ohne Blabla.
+            </p>
+            <div class="tagline">The Art of Feeling. Amplified.</div>
+            <div class="linksRow">
+              🖤 <a href="https://newwomanintheshop.com" target="_blank" rel="noopener">newwomanintheshop.com</a>
+              🖤 <a href="https://rebellemedia.de" target="_blank" rel="noopener">rebellemedia.de</a>
+              🖤 <a href="mailto:rebelle.media.creator@gmail.com">rebelle.media.creator@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>So nutzt du’s</strong> · Copy → Paste → Anwenden</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">K</span>opiere den Prompt. Setze <strong>[X]</strong> oder <strong>[Thema]</strong> ein.
+            Lass ChatGPT arbeiten. Dann kürzen, schärfen, veröffentlichen.
+          </p>
+
+          <div class="hint">Diese Landingpage ist als „Scroll-Carousel“ gebaut: Dots rechts, Pfeile, Tastatur (↑/↓).</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_3_3817995591939702684.jpg"
+               alt="Hero Bild RE:BELLE™ Media – dunkler, hochwertiger Editorial Look" loading="eager" />
+          <figcaption class="cap">🖤 RE:BELLE™ Media · The Art of Feeling. Amplified.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 1 -->
+    <section class="page" id="p1" data-index="1">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_8_3817241015224994598.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">ChatGPT-Prompt-Liste · SEO mit Haltung</div>
+            <h1>Prompt 01: Suchintention klären</h1>
+            <p>Wenn die Intention unscharf ist, wird der Text später nur „Content“ – aber kein Treffer.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 01</strong> · Suchintention</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">A</span>nalysiere das Keyword <strong>[X]</strong>. Ordne es einer Suchintention zu
+            (informational, transactional, navigational). Was erwartet der Nutzer <em>wirklich</em> – und was nicht?
+          </p>
+
+          <div class="hint">Tipp: Schreib erst, wenn du weißt, welches Ergebnis der Leser am Ende will.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_8_3817241015224994598.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 01" loading="lazy" />
+          <figcaption class="cap">🖤 RE:BELLE™ Media · The Art of Feeling. Amplified.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page" id="p2" data-index="2">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_7_3817241012934898025.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Prompt 02</div>
+            <h1>Prompt 02: Seitenstruktur (H1–H3)</h1>
+            <p>SEO ist selten ein Schreibproblem. Es ist ein Strukturproblem.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 02</strong> · Struktur</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">E</span>rstelle eine SEO-Struktur für <strong>[Thema]</strong> mit H1–H3 – logisch,
+            schlank, ohne Keyword-Stuffing. Fokus: Klarheit vor Länge.
+          </p>
+
+          <div class="hint">Wenn du die Struktur nicht in 60 Sekunden erklären kannst, ist sie zu kompliziert.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_7_3817241012934898025.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 02" loading="lazy" />
+          <figcaption class="cap">H1–H3 wie ein System: klar, stabil, lesbar.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page" id="p3" data-index="3">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_6_3817241013002041104.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Prompt 03</div>
+            <h1>Prompt 03: Überschriften (ohne Floskeln)</h1>
+            <p>Überschriften sind nicht Deko. Sie sind der Hebel.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 03</strong> · Headlines</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">S</span>chreibe 5 Überschriften für <strong>[Thema]</strong>, die Suchmaschinen
+            verstehen und Menschen weiterlesen lassen. Kein Clickbait, keine Floskeln.
+          </p>
+
+          <div class="hint">Ein gutes H1 ist: konkret, mutig, nicht austauschbar.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_6_3817241013002041104.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 03" loading="lazy" />
+          <figcaption class="cap">Nicht nett. Nicht laut. Sondern präzise.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page" id="p4" data-index="4">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_4_3817241010988774925.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Prompt 04</div>
+            <h1>Prompt 04: Position statt Beliebigkeit</h1>
+            <p>Du brauchst keine „SEO-Stimme“. Du brauchst eine klare.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 04</strong> · Haltung</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">S</span>chreibe einen Text zu <strong>[Thema]</strong>, der eine klare Position einnimmt
+            und nicht allen gefallen will. Ton: ruhig, souverän, nicht erklärend.
+          </p>
+
+          <div class="hint">Wenn dein Text niemandem widerspricht, wird er selten gespeichert.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_4_3817241010988774925.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 04" loading="lazy" />
+          <figcaption class="cap">Haltung ist ein Filter – und genau das ist gut.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 5 -->
+    <section class="page" id="p5" data-index="5">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_3_3817241009411679732.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Prompt 05</div>
+            <h1>Prompt 05: Meta-Description (155 Zeichen)</h1>
+            <p>Meta-Descriptions sind Mini-Verträge mit dem Leser.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 05</strong> · Snippet</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">F</span>ormuliere eine Meta-Description für <strong>[Thema]</strong>, die Neugier erzeugt,
+            ohne zu versprechen. Max. 155 Zeichen.
+          </p>
+
+          <div class="hint">Wenn du zu viel versprichst, verlierst du Vertrauen – und Zeit auf der Seite.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_3_3817241009411679732.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 05" loading="lazy" />
+          <figcaption class="cap">Kurz. Klar. Klickwürdig.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 6 -->
+    <section class="page" id="p6" data-index="6">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_2_3817241007851434771.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Prompt 06</div>
+            <h1>Prompt 06: FAQs aus echten Nutzerfragen</h1>
+            <p>Gute FAQs beantworten echte Fragen – nicht SEO-Mythen.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 06</strong> · FAQ</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">E</span>rstelle 5 FAQs zu <strong>[Thema]</strong>, basierend auf echten Nutzerfragen –
+            nicht auf SEO-Mythen.
+          </p>
+
+          <div class="hint">Wenn eine FAQ keine Unsicherheit löst, fliegt sie raus.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_2_3817241007851434771.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 06" loading="lazy" />
+          <figcaption class="cap">Fragen sind Kaufwiderstände in Tarnung.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 7 -->
+    <section class="page" id="p7" data-index="7">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_1_3817241008186921789.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Prompt 07</div>
+            <h1>Prompt 07: Blog → LinkedIn → Shop → Pinterest</h1>
+            <p>Plattformen brauchen Übersetzung – nicht Duplikate.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 07</strong> · Multi-Use</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">Ü</span>bersetze den Inhalt von <strong>[URL/Text]</strong> in: Blog, LinkedIn-Post,
+            Shoptext, Pinterest-Beschreibung. Kein Copy-Paste, sondern Perspektivwechsel.
+          </p>
+
+          <div class="hint">Die Idee bleibt gleich. Der Blickwinkel wechselt. So entsteht Reichweite ohne Mehrarbeit.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260124_p_3817241757214127195_1_3817241008186921789.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 07" loading="lazy" />
+          <figcaption class="cap">Ein Kern. Vier Outfits.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 8 -->
+    <section class="page" id="p8" data-index="8">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_8_3817995597283229390.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Prompt 08</div>
+            <h1>Prompt 08: Text um 30% kürzen</h1>
+            <p>SEO liebt Klarheit. Menschen auch.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 08</strong> · Kürzen</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">K</span>ürze diesen Text um 30 %, ohne Information zu verlieren. Ziel: mehr Wirkung,
+            weniger Worte.
+          </p>
+
+          <div class="hint">Alles, was „nett klingt“, aber nichts entscheidet, ist Ballast.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_8_3817995597283229390.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 08" loading="lazy" />
+          <figcaption class="cap">Schneiden ist Strategie.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 9 -->
+    <section class="page" id="p9" data-index="9">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_7_3817995596452782110.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Prompt 09</div>
+            <h1>Prompt 09: Kompetenz ohne Verkaufsdruck</h1>
+            <p>Autorität ist Ton. Nicht Länge.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 09</strong> · Autorität</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">Ü</span>berarbeite diesen Text so, dass er Kompetenz ausstrahlt – nicht Verkaufsdruck.
+            Kein Coaching-Ton.
+          </p>
+
+          <div class="hint">Wer sich rechtfertigt, verliert Führung. Wer führt, erklärt nur das Nötigste.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_7_3817995596452782110.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 09" loading="lazy" />
+          <figcaption class="cap">Souveränität verkauft.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PAGE 10 -->
+    <section class="page" id="p10" data-index="10">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_6_3817995595622283578.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Prompt 10</div>
+            <h1>Prompt 10: SEO-Logik prüfen</h1>
+            <p>Keine Schönfärberei. Nur Hebel.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Prompt 10</strong> · Check</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">P</span>rüfe diesen Text auf SEO-Logik: Suchintention, Struktur, Lesbarkeit, Fokus.
+            Sag mir, <strong>was fehlt</strong> – nicht nur, was gut ist.
+          </p>
+
+          <div class="hint">Wenn du das konsequent nutzt, wird SEO ein System – nicht ein Zustand.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_6_3817995595622283578.jpg"
+               alt="Editorial Foto im dunklen, hochwertigen Look für RE:BELLE™ Media – Prompt 10" loading="lazy" />
+          <figcaption class="cap">Weniger Content. Mehr Wirkung. 🖤</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- OUTRO (PAGE 11) -->
+    <section class="page" id="outro" data-index="11">
+      <div class="bg" style="background-image:url('https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_5_3817995594305260081.jpg');"></div>
+      <div class="wrap">
+        <div class="topbar">
+          <div class="brand">
+            <div class="kicker">Outro</div>
+            <h1 class="heroTitle">Weniger Content. Mehr Wirkung.</h1>
+            <p class="heroSub">
+              SEO ist kein Marathon aus Wörtern.<br>
+              Es ist ein System aus Entscheidungen.
+            </p>
+            <div class="tagline">🖤 RE:BELLE™ Media. The Art of Feeling. Amplified.</div>
+            <div class="linksRow">
+              🖤 <a href="https://newwomanintheshop.com" target="_blank" rel="noopener">newwomanintheshop.com</a>
+              🖤 <a href="https://rebellemedia.de" target="_blank" rel="noopener">rebellemedia.de</a>
+              🖤 <a href="mailto:rebelle.media.creator@gmail.com">rebelle.media.creator@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="metaRow">
+            <div class="pill"><strong>Next Step</strong> · Copy & Paste Prompts</div>
+            <div class="actions">
+              <button class="navbtn" data-prev aria-label="Vorherige Seite">←</button>
+              <button class="navbtn" data-next aria-label="Nächste Seite">→</button>
+            </div>
+          </div>
+
+          <p class="prompt">
+            <span class="initial">N</span>imm dir ein Thema, starte mit Prompt 01, arbeite dich durch –
+            und veröffentliche erst, wenn Klarheit da ist.
+          </p>
+
+          <div class="hint">Du willst daraus ein Shop-Produkt? Dann packen wir PDF + ZIP + Lizenztext + Shopcopy.</div>
+        </div>
+
+        <figure class="figure">
+          <img src="https://rebellemedia.de/wp-content/uploads/2026/02/caspar.jade_20260125_p_3817996261308637313_5_3817995594305260081.jpg"
+               alt="Outro Bild RE:BELLE™ Media – dunkler, hochwertiger Editorial Look" loading="lazy" />
+          <figcaption class="cap">🖤 RE:BELLE™ Media · The Art of Feeling. Amplified.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer aria-label="Footer">
+      <div class="sig">🖤 RE:BELLE™ Media</div>
+      <div>The Art of Feeling. Amplified.</div>
+      <div style="margin-top:10px;">
+        🖤 <a href="https://newwomanintheshop.com" target="_blank" rel="noopener">newwomanintheshop.com</a>
+        &nbsp;·&nbsp;
+        🖤 <a href="https://rebellemedia.de" target="_blank" rel="noopener">rebellemedia.de</a>
+        &nbsp;·&nbsp;
+        🖤 <a href="mailto:rebelle.media.creator@gmail.com">rebelle.media.creator@gmail.com</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    (function(){
+      const scroller = document.getElementById('scroller');
+      const pages = Array.from(document.querySelectorAll('section.page'));
+      const dots = Array.from(document.querySelectorAll('.dot'));
+      const nextBtns = Array.from(document.querySelectorAll('[data-next]'));
+      const prevBtns = Array.from(document.querySelectorAll('[data-prev]'));
+
+      function setActiveDotById(id){
+        dots.forEach(d=>{
+          d.setAttribute('aria-current', d.getAttribute('data-goto') === id ? 'true' : 'false');
+        });
+      }
+
+      // Dots click
+      dots.forEach((d,i)=>{
+        d.addEventListener('click', ()=>{
+          const id = d.getAttribute('data-goto');
+          const el = document.getElementById(id);
+          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+        // default active = intro
+        d.setAttribute('aria-current', i===0 ? 'true' : 'false');
+      });
+
+      // Next/Prev
+      function goToIndex(idx){
+        const clamped = Math.max(0, Math.min(pages.length-1, idx));
+        pages[clamped].scrollIntoView({behavior:'smooth', block:'start'});
+      }
+
+      nextBtns.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const current = getCurrentIndex();
+          goToIndex(current + 1);
+        });
+      });
+
+      prevBtns.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const current = getCurrentIndex();
+          goToIndex(current - 1);
+        });
+      });
+
+      // Keyboard nav
+      window.addEventListener('keydown', (e)=>{
+        const key = e.key;
+        if(key !== 'ArrowDown' && key !== 'ArrowUp' && key !== 'PageDown' && key !== 'PageUp') return;
+        e.preventDefault();
+        const current = getCurrentIndex();
+        if(key === 'ArrowDown' || key === 'PageDown') goToIndex(current + 1);
+        if(key === 'ArrowUp' || key === 'PageUp') goToIndex(current - 1);
+      }, {passive:false});
+
+      // Intersection observer for active dots
+      const obs = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const id = entry.target.id;
+            setActiveDotById(id);
+          }
+        });
+      }, {root: scroller, threshold: 0.55});
+
+      pages.forEach(p => obs.observe(p));
+
+      function getCurrentIndex(){
+        const currentId = dots.find(d => d.getAttribute('aria-current') === 'true')?.getAttribute('data-goto') || 'hero';
+        const idx = pages.findIndex(p => p.id === currentId);
+        return idx >= 0 ? idx : 0;
+      }
+    })();
+  </script>
+</body>
+</html>
