@@ -313,6 +313,27 @@
     }
   </style>
 </head>
+/* 📱 MOBILE: Background-Silhouette sichtbar halten */
+@media (max-width: 768px) {
+
+  .bg::after{
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7,7,10,.45) 0%,
+        rgba(7,7,10,.65) 100%
+      );
+  }
+
+  .figure img{
+    filter: contrast(1.05) saturate(1.08);
+  }
+
+  .card{
+    background: rgba(12,13,18,.55);
+    backdrop-filter: blur(6px);
+  }
+}
 
 <body>
   <nav class="dots" aria-label="Seitennavigation">
